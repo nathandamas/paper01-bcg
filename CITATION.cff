@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "During anonymous review, cite the accompanying manuscript. Replace this file with the final author and article metadata after acceptance."
+title: "OSM building-area growth and completeness: reproduction package"
+type: software
+authors:
+  - family-names: "Anonymous"
+version: "1.0.0-review"
+date-released: 2026-08-27
+license: MIT

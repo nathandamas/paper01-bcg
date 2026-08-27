@@ -1,0 +1,86 @@
+study:
+  city: Curitiba
+  crs: EPSG:31982
+  grid_cells: 502
+  regression_cells: 207
+  start_year: 2008.0
+  monthly_start: "2008-01-01"
+  monthly_end: "2026-02-01"
+  monthly_observations: 218
+
+curve:
+  formula: "a + (b - a) / (1 + exp((m - t) / tau))"
+  value_scale_for_fit_m2: 1000.0
+  raw_final_min_m2: 1000.0
+  corrected_range_min_m2: 5000.0
+  max_function_evaluations: 70000
+  methods:
+    - name: trf
+      bounded: true
+      minimum_candidate_r2: 0.30
+    - name: dogbox
+      bounded: true
+      minimum_candidate_r2: 0.30
+    - name: lm
+      bounded: false
+      minimum_candidate_r2: 0.20
+
+quality_gate:
+  upper_asymptote_rse_max: 0.50
+  inflection_month_rse_max: 0.50
+  time_constant_rse_max: 1.00
+  r2_min: 0.90
+  current_to_upper_asymptote_min: 0.85
+  inflection_month_min: 6
+  inflection_month_max: 210
+  degenerate_r2_max_exclusive: 0.99999
+  vida_reference_area_min_km2: 0.005
+
+spatial:
+  seed: 42
+  permutations: 999
+  alpha: 0.05
+  primary_weights: queen
+  sensitivity_weights: rook
+  weights_for_moran: binary
+  weights_for_models: row_standardized
+  local_kernel: gaussian
+  local_bandwidth: adaptive
+  local_selection: AICc
+
+expected:
+  tolerance:
+    deterministic: 1.0e-6
+    local_models: 5.0e-3
+  n: 207
+  ols:
+    r2: 0.8296897613843568
+    adjusted_r2: 0.8263172814117699
+    aic: -413.9483779281487
+    bic: -397.28478396182186
+    rmse: 0.0869025040707829
+    shape_wald_statistic: 1.7613620553193623
+    shape_wald_p: 0.4145005292120133
+  queen:
+    moran_i: 0.16971063432078445
+    moran_p: 0.004
+    lisa_counts: {HH: 9, LL: 14, LH: 10, HL: 5, ns: 169}
+  rook:
+    moran_i: 0.2610061894676862
+    moran_p: 0.002
+  spatial_lag:
+    rho: 0.07979997539916403
+    pseudo_r2: 0.8330205076506881
+    aic: -415.71219200371945
+  spatial_error:
+    lambda: 0.2937628197998515
+    pseudo_r2: 0.8293319043638497
+    aic: -424.46786439018354
+  gwr_standardized:
+    bandwidth: 51
+    r2: 0.8638993332301117
+    aicc: 203.27469063936832
+  mgwr_standardized:
+    r2: 0.9329655847782077
+    aicc: 133.6218539705499
+    bandwidths: {const: 11, inflection: 179, rate: 198, b_asymptote: 6, pop_density: 7}

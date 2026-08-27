@@ -1,0 +1,20 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.idea/
+.vscode/
+
+# Regenerated outputs (reference outputs remain tracked under data/ and reference/)
+results/models/*
+results/tables/*
+results/figures/*
+!results/models/.gitkeep
+!results/tables/.gitkeep
+!results/figures/.gitkeep
+

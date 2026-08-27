@@ -1,0 +1,10 @@
+name: osm-building-completeness
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.11
+  - pip
+  - pip:
+      - -r requirements-lock.txt
+      - -e .
+
