@@ -1,0 +1,40 @@
+name: validate-reproduction-package
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quick-reproduction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: environment.yml
+          cache-environment: true
+          init-shell: bash
+      - name: Validate archive and anonymity
+        shell: bash -el {0}
+        run: python scripts/00_validate.py --strict --anonymity
+      - name: Run tests
+        shell: bash -el {0}
+        run: pytest
+      - name: Run quick reproduction
+        shell: bash -el {0}
+        run: python scripts/reproduce.py --mode quick --skip-validation
+      - name: Check generated figure envelope
+        shell: bash -el {0}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          for path in sorted(Path("results/figures").glob("Figure_*.png")):
+              with Image.open(path) as image:
+                  assert image.width <= 2138, (path, image.size)
+                  assert image.height <= 2551, (path, image.size)
+          PY
+
