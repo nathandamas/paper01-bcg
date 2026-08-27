@@ -1,0 +1,259 @@
+{
+  "run_id": "v20-2",
+  "provenance": {
+    "input_file": "data/analysis-ready/cell_analysis_input.geoparquet",
+    "input_sha256": "35fcddcea866156ed511873b34f421db9982d9ecc0d538ad0357ef06f56693e0",
+    "seed": 42,
+    "python": "3.11.11",
+    "versions": {
+      "numpy": "2.4.6",
+      "pandas": "3.0.0",
+      "geopandas": "1.1.3",
+      "scipy": "1.17.1",
+      "statsmodels": "0.14.6",
+      "libpysal": "4.14.1",
+      "esda": "2.9.0",
+      "spreg": "1.9.0",
+      "mgwr": "2.2.1"
+    }
+  },
+  "config": {
+    "SEED": 42,
+    "CITY_CODE": "CWB",
+    "SOURCE_VERSION": "02_curve_fitting_optimized_v20",
+    "RSE_THRESHOLD_B": 0.5,
+    "RSE_THRESHOLD_C": 0.5,
+    "RSE_THRESHOLD_D": 1.0,
+    "MIN_R2": 0.9,
+    "SATURATION_FRACTION": 0.85,
+    "C_WINDOW_LOW": 6,
+    "C_WINDOW_HIGH": 210,
+    "START_YEAR": 2008.0,
+    "INCLUDE_B": true,
+    "INCLUDE_POP_DENSITY": true,
+    "PRIMARY": "ref_completeness_area"
+  },
+  "results": {
+    "ref_completeness_area": {
+      "dependent": "ref_completeness_area",
+      "curve_family": "area",
+      "flag_pass_counts": {
+        "flag_convergence": 319,
+        "flag_rse_b_infl": 277,
+        "flag_rse_rate": 244,
+        "flag_r2": 300,
+        "flag_saturation": 280,
+        "flag_c_window": 292,
+        "flag_not_degenerate": 300,
+        "flag_all": 207
+      },
+      "ols": {
+        "n": 207,
+        "r2": 0.8296897613843568,
+        "adj_r2": 0.8263172814117699,
+        "aic": -413.9483779281487,
+        "bic": -397.28478396182186,
+        "f_pvalue": 6.231931240598198e-45,
+        "max_vif": 5.784450452949767,
+        "coefficients": {
+          "const": {
+            "coef": -4.6660551244,
+            "std_err": 3.5848650242,
+            "t": -1.301598552,
+            "p": 0.1930536551,
+            "beta_star": null
+          },
+          "inflection": {
+            "coef": 0.0023599941,
+            "std_err": 0.0017786636,
+            "t": 1.3268355416,
+            "p": 0.1845630906,
+            "beta_star": 0.0325765267
+          },
+          "rate": {
+            "coef": -4.3408e-06,
+            "std_err": 0.0002152547,
+            "t": -0.0201656703,
+            "p": 0.9839112134,
+            "beta_star": -0.0005378642
+          },
+          "b_asymptote": {
+            "coef": 3.4886e-06,
+            "std_err": 2.034e-07,
+            "t": 17.1540923752,
+            "p": 5.857808081e-66,
+            "beta_star": 0.8896409299
+          },
+          "pop_density": {
+            "coef": -1.28369e-05,
+            "std_err": 3.0778e-06,
+            "t": -4.1708130581,
+            "p": 3.03515e-05,
+            "beta_star": -0.1744152514
+          }
+        },
+        "beta_star": {
+          "inflection": 0.03257652669700651,
+          "rate": -0.0005378642097821416,
+          "b_asymptote": 0.8896409299175022,
+          "pop_density": -0.1744152514311996
+        },
+        "pvalues": {
+          "const": 0.19305365509887573,
+          "inflection": 0.18456309064621534,
+          "rate": 0.9839112134349152,
+          "b_asymptote": 5.857808080777559e-66,
+          "pop_density": 3.0351477840562537e-05
+        }
+      },
+      "wald_h5": {
+        "variables": [
+          "inflection",
+          "rate"
+        ],
+        "F": 1.7613620553193623,
+        "p": 0.4145005292120133
+      },
+      "spatial": {
+        "moran_I": 0.16971063432078445,
+        "moran_p_sim": 0.004,
+        "moran_z": 3.524179692873081,
+        "moran_EI": -0.0048543689320388345,
+        "lm_lag_stat": 3.903458809717372,
+        "lm_lag_p": 0.04818680556584707,
+        "lm_err_stat": 11.0053318327942,
+        "lm_err_p": 0.0009085016631672956,
+        "rlm_lag_p": 0.5588981324946585,
+        "rlm_err_p": 0.006366635923941553,
+        "decision": "spatial_error",
+        "lisa_counts": {
+          "HH": 9,
+          "LL": 14,
+          "LH": 10,
+          "HL": 5,
+          "ns": 169
+        }
+      },
+      "spatial_lag": {
+        "model": "Spatial-Lag",
+        "R2": 0.8330205076506881,
+        "adj_R2": null,
+        "AIC": -415.71219200371945,
+        "AICc": null,
+        "key_param": "rho=0.0798",
+        "rho": 0.07979997539916403
+      },
+      "spatial_error": {
+        "model": "Spatial-Error",
+        "R2": 0.8293319043638497,
+        "adj_R2": null,
+        "AIC": -424.46786439018354,
+        "AICc": null,
+        "key_param": "lambda=0.2938",
+        "lambda": 0.2937628197998515
+      },
+      "gwr": {
+        "bw": 51.0,
+        "r2": 0.8638993332297585,
+        "aicc": -441.6965906173397,
+        "local_significance": [
+          {
+            "covariate": "const",
+            "pct_significant": 0.0,
+            "median_abs_t": 0.8259329491
+          },
+          {
+            "covariate": "inflection",
+            "pct_significant": 0.0,
+            "median_abs_t": 0.8332727688
+          },
+          {
+            "covariate": "rate",
+            "pct_significant": 0.0,
+            "median_abs_t": 0.2118852919
+          },
+          {
+            "covariate": "b_asymptote",
+            "pct_significant": 100.0,
+            "median_abs_t": 25.4832189913
+          },
+          {
+            "covariate": "pop_density",
+            "pct_significant": 74.3961352657,
+            "median_abs_t": 2.996525415
+          }
+        ]
+      },
+      "mgwr": {
+        "bandwidths": {
+          "const": 3.0,
+          "inflection": 3.0,
+          "rate": 12.0,
+          "b_asymptote": 3.0,
+          "pop_density": 4.0
+        },
+        "r2": 0.9599121430394869,
+        "aicc": -397.37233388739486,
+        "enp": null
+      },
+      "best_model": "GWR"
+    }
+  },
+  "bh_fdr_primary": {
+    "H1_OLS_F": {
+      "raw_p": 6.231931240598198e-45,
+      "bh_p": 1.2463862481196397e-44,
+      "reject_H0": true
+    },
+    "H2_MoranI": {
+      "raw_p": 0.004,
+      "bh_p": 0.005333333333333333,
+      "reject_H0": true
+    },
+    "H4_b_asymptote_t": {
+      "raw_p": 5.857808080777559e-66,
+      "bh_p": 2.3431232323110236e-65,
+      "reject_H0": true
+    },
+    "H5_Wald_shape": {
+      "raw_p": 0.4145005292120133,
+      "bh_p": 0.4145005292120133,
+      "reject_H0": false
+    }
+  },
+  "sensitivity_rse_tau": [
+    {
+      "tau_bc": 0.25,
+      "tau_d": 0.5,
+      "n": 199,
+      "adj_r2": 0.8332246679166654,
+      "moran_I": 0.22501121758420595,
+      "moran_p": 0.002,
+      "wald_F": 2.2031278665724163,
+      "wald_p": 0.3323509024007163,
+      "best": "Spatial-Error"
+    },
+    {
+      "tau_bc": 0.5,
+      "tau_d": 1.0,
+      "n": 207,
+      "adj_r2": 0.8263172814117699,
+      "moran_I": 0.16971063432078445,
+      "moran_p": 0.005,
+      "wald_F": 1.7613620553193623,
+      "wald_p": 0.4145005292120133,
+      "best": "Spatial-Error"
+    },
+    {
+      "tau_bc": 1.0,
+      "tau_d": 2.0,
+      "n": 217,
+      "adj_r2": 0.8281018625831565,
+      "moran_I": 0.14756062266619022,
+      "moran_p": 0.004,
+      "wald_F": 2.0601786694149484,
+      "wald_p": 0.35697506888129715,
+      "best": "Spatial-Error"
+    }
+  ]
+}
