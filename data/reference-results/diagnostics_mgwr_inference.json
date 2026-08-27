@@ -1,0 +1,136 @@
+{
+  "bws_intervals_gaussian": {
+    "const": [
+      11.0,
+      13.0
+    ],
+    "inflection": [
+      129.0,
+      179.0
+    ],
+    "rate": [
+      129.0,
+      198.0
+    ],
+    "b_asymptote": [
+      6.0,
+      6.0
+    ],
+    "pop_density": [
+      6.0,
+      7.0
+    ]
+  },
+  "inference_gaussian_std": [
+    {
+      "covariate": "const",
+      "ENP_j": 9.053318795962115,
+      "median_abs_t": 0.9525249777866084,
+      "pct_sig_corrected": 24.154589371980677
+    },
+    {
+      "covariate": "inflection",
+      "ENP_j": 1.1549372217887206,
+      "median_abs_t": 0.6010166295612096,
+      "pct_sig_corrected": 0.0
+    },
+    {
+      "covariate": "rate",
+      "ENP_j": 1.1813357851461865,
+      "median_abs_t": 0.1612332158047355,
+      "pct_sig_corrected": 0.0
+    },
+    {
+      "covariate": "b_asymptote",
+      "ENP_j": 15.132706462129486,
+      "median_abs_t": 13.09495518710325,
+      "pct_sig_corrected": 100.0
+    },
+    {
+      "covariate": "pop_density",
+      "ENP_j": 14.34658643707171,
+      "median_abs_t": 1.6268975995504675,
+      "pct_sig_corrected": 33.33333333333333
+    }
+  ],
+  "inference_bisquare_std": [
+    {
+      "covariate": "const",
+      "ENP_j": 18.15311479008501,
+      "median_abs_t": 1.1398688910798462,
+      "pct_sig_corrected": 19.806763285024154
+    },
+    {
+      "covariate": "inflection",
+      "ENP_j": 1.3721972711197983,
+      "median_abs_t": 0.6800110017009261,
+      "pct_sig_corrected": 0.0
+    },
+    {
+      "covariate": "rate",
+      "ENP_j": 15.147509060552855,
+      "median_abs_t": 0.6904546633054783,
+      "pct_sig_corrected": 4.830917874396135
+    },
+    {
+      "covariate": "b_asymptote",
+      "ENP_j": 15.672531808656222,
+      "median_abs_t": 11.348886557832394,
+      "pct_sig_corrected": 100.0
+    },
+    {
+      "covariate": "pop_density",
+      "ENP_j": 14.781713679075906,
+      "median_abs_t": 1.5695910572060283,
+      "pct_sig_corrected": 35.26570048309179
+    }
+  ],
+  "bws_intervals_bisquare": {
+    "const": [
+      21.0,
+      25.0
+    ],
+    "inflection": [
+      158.0,
+      206.0
+    ],
+    "rate": [
+      28.0,
+      32.0
+    ],
+    "b_asymptote": [
+      25.0,
+      26.0
+    ],
+    "pop_density": [
+      28.0,
+      32.0
+    ]
+  },
+  "adjusted_mass_sensitivity": [
+    {
+      "max_adjusted_mass_pct": 5.0,
+      "n": 152,
+      "adj_r2": 0.8581899178368999,
+      "wald_chi2": 0.054715225956425764,
+      "wald_p": 0.9730132171446048
+    },
+    {
+      "max_adjusted_mass_pct": 10.0,
+      "n": 174,
+      "adj_r2": 0.8617373408256935,
+      "wald_chi2": 0.2962078129703697,
+      "wald_p": 0.86234150741166
+    },
+    {
+      "max_adjusted_mass_pct": 25.0,
+      "n": 193,
+      "adj_r2": 0.8444640102735932,
+      "wald_chi2": 0.6215364564845963,
+      "wald_p": 0.7328837179337717
+    }
+  ],
+  "note_raw_series": "cells with adjusted mass <= 5% are near-raw (median correction 0.1% on the area series); a full raw-series refit requires the upstream fitting pipeline and is deferred",
+  "run_id": "v20-4b",
+  "generated": "2026-07-29T02:03:20"
+}

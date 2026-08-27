@@ -1,0 +1,50 @@
+{
+  "run_id": "v20-3-mgwr-std",
+  "generated": "2026-07-29T01:38:16",
+  "note": "y and X z-standardized (Oshan et al. 2019 recommendation); GWR refit on same standardized data for like-for-like AICc. Unstandardized bandwidth vectors are scale-sensitive: raw v20 params -> (7,206,206,22,19); Eq.(3) scales -> (3,3,12,3,4).",
+  "n": 207,
+  "gwr_std": {
+    "bw": 51.0,
+    "r2": 0.8638993332301117,
+    "aicc": 203.27469063936832,
+    "local_significance": [
+      {
+        "covariate": "const",
+        "pct_significant": 25.6038647343,
+        "median_abs_t": 1.3274201223
+      },
+      {
+        "covariate": "inflection",
+        "pct_significant": 0.0,
+        "median_abs_t": 0.8332727688
+      },
+      {
+        "covariate": "rate",
+        "pct_significant": 0.0,
+        "median_abs_t": 0.2118852918
+      },
+      {
+        "covariate": "b_asymptote",
+        "pct_significant": 100.0,
+        "median_abs_t": 25.4832189914
+      },
+      {
+        "covariate": "pop_density",
+        "pct_significant": 74.3961352657,
+        "median_abs_t": 2.996525415
+      }
+    ]
+  },
+  "mgwr_std": {
+    "bandwidths": {
+      "const": 11.0,
+      "inflection": 179.0,
+      "rate": 198.0,
+      "b_asymptote": 6.0,
+      "pop_density": 7.0
+    },
+    "r2": 0.9329655847782077,
+    "aicc": 133.6218539705499
+  },
+  "bw_ratio_c_over_d": 1.106145251396648
+}
